@@ -22,10 +22,16 @@ player1.classList.add('active');
 const handleRestart = () => {
   // reload the page
   // feels like cheating but it WILL reset the game
+  location.reload();
 };
 
 const toggleRestartBtn = () => {
   // enable the restart btn
+  if (COUNTER > 0) {
+    restartBtn.disabled = false;
+  } else {
+    restartBtn.disabled = true;
+  }
 };
 
 const win = () => {
@@ -36,10 +42,25 @@ const win = () => {
 
 const verifyWin = () => {
   // Use the game array to determine the winner.
+  if (COUNTER % 2 === 0) {
+    // Winner, player 1
+  } else {
+    // Winner, player 2
+  }
 };
 
 const togglePlayer = () => {
   // use .active to show active player visually...
+  if (currentPlayer === '1') {
+    currentPlayer === '2';
+    player1.classList.remove("active");
+    player2.classList.add("active");
+  } else  {
+    currentPlayer === '1';
+    player1.classList.add("active");
+    player2.classList.remove("active");
+  }
+  COUNTER++
 };
 
 const handleClick = (event) => {
@@ -47,12 +68,14 @@ const handleClick = (event) => {
   const currentCellDiv = document.getElementById(cell);
   const cellId = cell.charAt(cell.length - 1);
   const icon = currentPlayer === '1' ? PLAYER_1_ICON : PLAYER_2_ICON;
-
+  
   if (typeof game[cellId] === 'number') {
     currentCellDiv.innerText = icon;
-
-    // so much missing here...
+    togglePlayer()
   }
+
+  toggleRestartBtn();
+
 };
 
 board.addEventListener('click', handleClick);

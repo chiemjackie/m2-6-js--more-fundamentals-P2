@@ -9,8 +9,18 @@ let foodPairings = {
 };
 
 // createRecommendations function
+function createRecommendations(pairings) {
+  return Object.keys(pairings).map((food) => {
+    return `With ${food}, it is best to have ${pairings[food]}.`;
+  });
+};
 
 // printRecommendations function
+function printRecommendations(pair) {
+  pair.forEach((recommendation) => {
+    console.log(`- ${recommendation}`);
+  });
+};
 
 // function call (done)
 printRecommendations(createRecommendations(foodPairings));

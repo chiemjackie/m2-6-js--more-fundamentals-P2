@@ -18,6 +18,8 @@ const friendsAge = { Rahul: 32, Marianne: 60, Chaim: 14, Abdul: 35 };
 ```js
 const friendsAge = { Rahul: 32, Marianne: 60, Chaim: 14, Abdul: 35 };
 
+const friendsList = Object.keys(friendsAge);
+console.log(friendList);
 // Output a list of my friends' names: ['Rahul', 'Marianne', etc]
 ```
 
@@ -29,4 +31,15 @@ const friendsAge = { Rahul: 32, Marianne: 60, Chaim: 14, Abdul: 35 };
 const friendsAge = { Rahul: 32, Marianne: 60, Chaim: 14, Abdul: 35 };
 
 // Get the AVERAGE age amongst my friends
+
+const calcAverage = (obj) => {
+  let total = 0;
+  const values = Object.values(friendsAge);
+  values.forEach(age => {
+    total += age;
+  });
+  return total / values.length;
+}
+calcAverage(friendsAge);
+
 ```

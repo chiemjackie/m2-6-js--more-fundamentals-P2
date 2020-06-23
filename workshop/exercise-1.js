@@ -12,3 +12,18 @@ let mostPopularFood = [
   'parmesan chicken',
   undefined,
 ];
+
+const fixList = (arr, first, last) => {
+  arr.unshift(first);
+  arr.pop();
+  arr.push(last);
+  return arr;
+};
+
+const printList = (arr) => {
+  for (let i = 0; i < arr.length; i++) {
+    console.log(`${i + 1}. ${arr[i]}`);
+  }
+};
+
+printList(fixList(mostPopularFood,'bean burritos', 'buffalo-flavoured cauliflower'));

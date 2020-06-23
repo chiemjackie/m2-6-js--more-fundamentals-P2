@@ -62,6 +62,11 @@ let myObj = {
 console.log(
   `His name is ${myObj.name} (${myObj.age} yrs old). He lives in ${myObj.city}.`
 );
+
+// or
+
+CONST {name, age, city} = myObj
+console.log(`His name is ${name} and he is ${age} years old. He lives in ${city}.`)
 ```
 
 ---

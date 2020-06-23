@@ -13,3 +13,18 @@ let mostPopularFood = [
   'parmesan chicken',
   'buffalo-flavored cauliflower',
 ];
+
+function alphaSort(arr) {
+
+  // let copiedArray = [...arr].sort().forEach(function item() {
+  //   let rank = mostPopularFood.indexOf(item);
+  //   console.log(`${item} (${rank + 1})`);
+  // });
+
+  let copiedArray = [...arr].sort();
+  for (let i = 0; i < copiedArray.length; i++) {
+  console.log(`${copiedArray[i]} (${arr.indexOf(copiedArray[i])+1})`)
+  };
+}
+
+alphaSort(mostPopularFood);
